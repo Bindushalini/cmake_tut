@@ -19,8 +19,10 @@ project(Tutorial VERSION 2.2)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 configure_file(TutorialConfig.h.in TutorialConfig.h)
+add_subdirectory(MathFunctions)
 add_executable(Tutorial tutorial.cxx)
-target_include_directories(Tutorial PUBLIC "${PROJECT_BINARY_DIR}")
+target_link_libraries(Tutorial MathFunctions)
+target_include_directories(Tutorial PUBLIC "${PROJECT_BINARY_DIR} ${PROJECT_SOURCE_DIR}/MathFunctions")
 
 
 
