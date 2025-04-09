@@ -10,3 +10,6 @@ target_include_directories() to specify where the executable target should look 
 
 we can add libraries inside subdirectories (individual cmake) and link them to top directory build 
 conditional statements in order to provide option
+
+usage requirements: specify the depending library include directories in cmake of mathfunctions itself.(instead of in top level)
+the only thing our executable target does to use our library is call target_link_libraries() with the name of the library target. In larger projects, the classic method of specifying library dependencies manually becomes very complicated very quickly.

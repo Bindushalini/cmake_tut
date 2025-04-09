@@ -16,13 +16,14 @@
 # TODO 9: Use target_include_directories to include ${PROJECT_BINARY_DIR}
 cmake_minimum_required(VERSION 3.10)
 project(Tutorial VERSION 2.2)
-set(CMAKE_CXX_STANDARD 11)
-set(CMAKE_CXX_STANDARD_REQUIRED True)
+add_library(tutorial_compiler_flags INTERFACE)
+target_compile_features(tutorial_compiler_flags INTERFACE cxx_std_11)
 configure_file(TutorialConfig.h.in TutorialConfig.h)
 add_subdirectory(MathFunctions)
 add_executable(Tutorial tutorial.cxx)
-target_link_libraries(Tutorial MathFunctions)
-target_include_directories(Tutorial PUBLIC "${PROJECT_BINARY_DIR} ${PROJECT_SOURCE_DIR}/MathFunctions")
+target_link_libraries(Tutorial MathFunctions tutorial_compiler_flags)
+#TODO X: Remove use of EXTRA_INCLUDES
+target_include_directories(Tutorial PUBLIC "${PROJECT_BINARY_DIR}")
 
 
 
