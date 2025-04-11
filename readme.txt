@@ -13,3 +13,5 @@ conditional statements in order to provide option
 
 usage requirements: specify the depending library include directories in cmake of mathfunctions itself.(instead of in top level)
 the only thing our executable target does to use our library is call target_link_libraries() with the name of the library target. In larger projects, the classic method of specifying library dependencies manually becomes very complicated very quickly.
+
+Generator expressions may be used to enable conditional linking, conditional definitions used when compiling, conditional include directories and more. The conditions may be based on the build configuration, target properties, platform information or any other queryable information.
