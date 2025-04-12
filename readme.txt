@@ -30,3 +30,11 @@ The loadable module file (e.g. .dll or .so) of a module library target created b
  cmake -G "MinGW Makefiles" ..\cmake-4.0.0-rc5-tutorial-source\Step1
  cmake --build . --target install --config Debug
  cmake --install .
+
+ ctest
+ enable_testing()
+ add_test(), set_tests_properties()
+
+ commands: ctest -N  -lists the test information without testing
+ ctest -V : verbose: detailed information and testing 
+ ctest -VV: very detailed verbose

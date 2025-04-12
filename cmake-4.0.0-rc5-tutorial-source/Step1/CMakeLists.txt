@@ -42,3 +42,14 @@ target_include_directories(Tutorial PUBLIC "${PROJECT_BINARY_DIR}")
 
 install(TARGETS Tutorial DESTINATION "${PROJECT_BINARY_DIR}/bin")
 install(FILES "${PROJECT_BINARY_DIR}/TutorialConfig.h" DESTINATION "${PROJECT_BINARY_DIR}/include")
+
+enable_testing()
+add_test(NAME Runs COMMAND Tutorial 25)
+add_test(NAME Usage COMMAND Tutorial)
+set_tests_properties(Usage
+  PROPERTIES PASS_REGULAR_EXPRESSION "Usage:.*number"
+  )
+  add_test(NAME Test1 COMMAND Tutorial 49)
+  set_tests_properties(Test1
+    PROPERTIES PASS_REGULAR_EXPRESSION "49 is 7"
+    )
