@@ -15,3 +15,18 @@ usage requirements: specify the depending library include directories in cmake o
 the only thing our executable target does to use our library is call target_link_libraries() with the name of the library target. In larger projects, the classic method of specifying library dependencies manually becomes very complicated very quickly.
 
 Generator expressions may be used to enable conditional linking, conditional definitions used when compiling, conditional include directories and more. The conditions may be based on the build configuration, target properties, platform information or any other queryable information.
+
+
+A runtime output artifact of a buildsystem target may be:
+
+The executable file (e.g. .exe) of an executable target created by the add_executable() command.
+
+On DLL platforms: the executable file (e.g. .dll) of a shared library target created by the add_library() command with the SHARED option.
+
+A library output artifact of a buildsystem target may be:
+
+The loadable module file (e.g. .dll or .so) of a module library target created by the add_library() command with the MODULE option.
+
+ cmake -G "MinGW Makefiles" ..\cmake-4.0.0-rc5-tutorial-source\Step1
+ cmake --build . --target install --config Debug
+ cmake --install .

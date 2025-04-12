@@ -34,4 +34,11 @@ target_link_libraries(Tutorial MathFunctions tutorial_compiler_flags)
 target_include_directories(Tutorial PUBLIC "${PROJECT_BINARY_DIR}")
 
 
+#TODO 3: Install Tutorial in the bin directory
+# Hint: Use the TARGETS and DESTINATION parameters
 
+# TODO 4: Install TutorialConfig.h to the include directory
+# Hint: Use the FILES and DESTINATION parameters
+
+install(TARGETS Tutorial DESTINATION "${PROJECT_BINARY_DIR}/bin")
+install(FILES "${PROJECT_BINARY_DIR}/TutorialConfig.h" DESTINATION "${PROJECT_BINARY_DIR}/include")
