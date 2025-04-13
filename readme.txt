@@ -41,3 +41,6 @@ The loadable module file (e.g. .dll or .so) of a module library target created b
 
 
  As a dashboard client, CTest performs a sequence of steps to configure, build, and test software, and then submits the results to a CDash server. 
+
+
+ we will be building installation packages that support binary installations and package management features. To accomplish this we will use CPack to create platform specific installers
