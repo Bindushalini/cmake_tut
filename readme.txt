@@ -38,3 +38,6 @@ The loadable module file (e.g. .dll or .so) of a module library target created b
  commands: ctest -N  -lists the test information without testing
  ctest -V : verbose: detailed information and testing 
  ctest -VV: very detailed verbose
+
+
+ As a dashboard client, CTest performs a sequence of steps to configure, build, and test software, and then submits the results to a CDash server. 

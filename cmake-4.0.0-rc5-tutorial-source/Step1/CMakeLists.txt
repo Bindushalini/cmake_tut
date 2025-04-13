@@ -43,7 +43,8 @@ target_include_directories(Tutorial PUBLIC "${PROJECT_BINARY_DIR}")
 install(TARGETS Tutorial DESTINATION "${PROJECT_BINARY_DIR}/bin")
 install(FILES "${PROJECT_BINARY_DIR}/TutorialConfig.h" DESTINATION "${PROJECT_BINARY_DIR}/include")
 
-enable_testing()
+#enable_testing()
+include(CTest)
 add_test(NAME Runs COMMAND Tutorial 25)
 add_test(NAME Usage COMMAND Tutorial)
 set_tests_properties(Usage
